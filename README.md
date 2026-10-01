@@ -1,10 +1,22 @@
-# 👋 Привет, я Руслан Бабашаихов
+<table border=0>
+  <tr>
+    <td width="180" valign="top">
+      <img src="https://avatars.githubusercontent.com/u/83781078?v=4" width="150" />
+    </td>
+    <td valign="top">
+      <h1>Привет, я Руслан Бабашаихов 👋</h1>
+      <h3>AI • Automation • Data Engineer</h3>
+      <p>
+        Разрабатываю практические AI-системы и автоматизации — от прототипов и RAG-пайплайнов до работающих приложений, развернутых в production.
+      </p>
+      <p>
+        Мой бэкграунд — веб- и продуктовая аналитика. Сейчас основной фокус — <b>LLM-приложения, RAG, AI-агенты, автоматизация бизнес-процессов и Python-разработка</b>.
+      </p>
+    </td>
+  </tr>
+</table>
 
-### **AI • Automation • Data Engineer**
-
-Разрабатываю практические AI-системы и автоматизации — от прототипов и RAG-пайплайнов до работающих приложений, развернутых в production.
-
-Мой бэкграунд — веб- и продуктовая аналитика. Сейчас основной фокус — **LLM-приложения, RAG, AI-агенты, автоматизация бизнес-процессов и Python-разработка**.
+---
 
 <p align="center">
   <img height="150em" src="https://github-readme-stats.vercel.app/api?username=rbabashaikhov&show_icons=true&theme=algolia&hide_border=true" />
