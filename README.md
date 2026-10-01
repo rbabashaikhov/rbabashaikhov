@@ -6,10 +6,10 @@
 
 Мой бэкграунд — веб- и продуктовая аналитика. Сейчас основной фокус — **LLM-приложения, RAG, AI-агенты, автоматизация бизнес-процессов и Python-разработка**.
 
-<p align="center">
+<!--p align="center">
   <img height="150em" src="https://github-readme-stats.vercel.app/api?username=rbabashaikhov&show_icons=true&theme=algolia&hide_border=true" />
   <img height="150em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rbabashaikhov&layout=compact&theme=algolia&hide_border=true" />
-</p>
+</p-->
 
 ---
 
