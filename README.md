@@ -70,31 +70,49 @@
 
 ---
 
-## 📺 Samsung TV AI Consultant
+## 🧠 AI Catalog Consultant
 
-**AI-консультант по каталогу телевизоров Samsung с production-oriented архитектурой.**
+**Production-like AI-консультант по товарному каталогу с RAG, structured retrieval и LLM tools.**
 
-Проект сочетает структурированные данные о товарах с LLM reasoning и retrieval, а не полагается только на векторное сходство.
+Завершённый portfolio/reference проект, реализованный на реальном каталоге телевизоров Samsung.  
+LLM не используется как источник товарных фактов: цены, характеристики, наличие и ограничения берутся из PostgreSQL и контролируемых retrieval-инструментов.
+
+**Архитектура**
+
+`Каталог → Python ingestion → PostgreSQL → RAG indexing → pgvector → Consultant Core → MCP → n8n → Telegram`
 
 **Стек:**  
-`Python` · `PostgreSQL` · `pgvector` · `OpenAI` · `n8n` · `Docker`
+`Python` · `PostgreSQL` · `pgvector` · `OpenAI` · `MCP` · `n8n` · `Docker` · `Telegram`
 
-В проекте реализованы и исследованы:
+Что реализовано:
 
-- структурированный каталог товаров
-- vector и structured retrieval
-- RAG
-- agent tools
-- intent semantics
-- retrieval evaluation
-- сравнение моделей
-- защита от hallucinations и фактических ошибок
-- multi-turn dialogue
-- автоматизированные evaluation suites
+- автоматический ingestion реального товарного каталога
+- нормализованное хранение товаров и характеристик в PostgreSQL
+- deterministic document/chunk generation
+- incremental embeddings с сохранением неизменившихся vectors
+- structured SQL retrieval для точных фактов и фильтрации
+- semantic retrieval через pgvector
+- hybrid подход к поиску и рекомендациям
+- закрытый набор LLM tools вместо произвольного SQL
+- MCP-сервис как контролируемая граница между LLM и backend
+- deterministic ranking для рекомендаций
+- evidence-aware обработка характеристик: `yes / no / not listed`
+- multi-turn dialogue с сохранением пользовательских ограничений
+- semantic guard против придуманных фильтров
+- Telegram transport с изоляцией пользовательских сессий
+- n8n как orchestration/integration layer
+- retrieval и agent evaluation
+- model bake-off
+- automated regression и acceptance suites
+- production safety: least-privilege DB roles, Docker, read-only runtime
 
-Проект развивается внутри моего AI Automation Lab.
+Для проекта проведены полноценные retrieval- и agent-evaluation, тестирование multi-turn сценариев и live-проверка через Telegram.
 
-👉 [AI Automation Lab](https://github.com/rbabashaikhov/ai-automation-lab)
+**Статус:** ✅ Completed portfolio MVP / reference implementation
+
+Samsung TV используется как реальный reference dataset; архитектура и инженерные подходы применимы к другим catalog-based AI systems.
+
+👉 [AI Catalog Consultant](https://github.com/rbabashaikhov/ai-automation-lab/tree/main/projects/ai-catalog-consultant)
 
 ---
 
