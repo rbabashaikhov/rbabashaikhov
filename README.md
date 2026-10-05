@@ -1,253 +1,130 @@
 # 👋 Привет, я Руслан Бабашаихов
 
-### **AI • Automation • Data Engineer**
+### AI Engineering · Automation · Data
 
-Разрабатываю практические AI-системы и автоматизации — от прототипов и RAG-пайплайнов до работающих приложений, развернутых в production.
+Разрабатываю прикладные AI- и data-системы для бизнеса: **RAG/LLM-приложения, AI-ассистенты, автоматизацию процессов, интеграции, ETL/аналитические пайплайны и BI**.
 
-Мой бэкграунд — веб- и продуктовая аналитика. Сейчас основной фокус — **LLM-приложения, RAG, AI-агенты, автоматизация бизнес-процессов и Python-разработка**.
+Мой бэкграунд — веб- и продуктовая аналитика. Поэтому в проектах я смотрю не только на код, но и на качество данных, измеримость результата, стоимость эксплуатации и надёжность решения.
 
-<!--p align="center">
-  <img height="150em" src="https://github-readme-stats.vercel.app/api?username=rbabashaikhov&show_icons=true&theme=algolia&hide_border=true" />
-  <img height="150em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rbabashaikhov&layout=compact&theme=algolia&hide_border=true" />
-</p-->
+**Открыт к проектам и сотрудничеству.**
 
----
-
-## 🛠 Технологии
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
-![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge)
-![n8n](https://img.shields.io/badge/n8n-EA4B71?style=for-the-badge&logo=n8n&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-![Qdrant](https://img.shields.io/badge/Qdrant-DC244C?style=for-the-badge)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-
-`LLM` · `RAG` · `AI Agents` · `Prompt Engineering` · `pgvector` · `REST API` · `Telegram Bots` · `Docker Compose` · `VPS` · `SQL` · `Analytics`
+[🌐 Портфолио](https://apps.leadmeter.ru) · [💼 Leadmeter](https://leadmeter.ru)
 
 ---
 
-## 🚀 Что я разрабатываю
+## 🔥 Ключевые проекты
 
-- 🤖 **LLM-приложения** — RAG-системы, AI-ассистенты и специализированные агенты
-- 🔎 **Retrieval-системы** — embeddings, векторный поиск, reranking и оценка качества поиска
-- ⚙️ **AI-автоматизации** — n8n, API-интеграции и автоматизация бизнес-процессов
-- 🐳 **Production-инфраструктуру** — Docker, Linux, VPS, PostgreSQL, reverse proxy и мониторинг
-- 📊 **Data & Analytics** — SQL, Power BI, пайплайны данных, продуктовая и веб-аналитика
-- 📱 **Прикладные продукты** — Telegram-боты, Mini Apps и веб-приложения
+### 🧠 AI Catalog Consultant
+
+**AI-консультант по товарному каталогу с контролируемыми LLM tools, structured retrieval и RAG.**
+
+Пользователь задаёт вопрос обычным языком, а система подбирает реальные товары по цене, характеристикам и наличию. LLM не является источником товарных фактов: данные берутся из PostgreSQL и закрытых инструментов.
+
+`Catalog → Python ingestion → PostgreSQL → pgvector → Consultant Core → MCP → n8n → Telegram`
+
+**Что реализовано:**
+- ingestion и нормализация реального e-commerce каталога;
+- PostgreSQL + pgvector;
+- structured SQL retrieval и semantic evidence;
+- закрытый набор typed LLM tools вместо произвольного SQL;
+- deterministic ranking и semantic guard;
+- multi-turn диалог;
+- incremental embeddings;
+- Telegram + n8n orchestration;
+- retrieval/agent evaluation, regression и acceptance tests.
+
+**Стек:** Python · PostgreSQL · pgvector · OpenAI · MCP · n8n · Docker · Telegram
+
+👉 [Код и архитектура](https://github.com/rbabashaikhov/ai-automation-lab/tree/main/projects/ai-catalog-consultant)
 
 ---
 
-# 🔥 Ключевые проекты
+### 🔐 Enterprise Private GPT
 
-## 🧠 Enterprise Private GPT
+**Полностью локальный RAG-ассистент для работы с юридическими документами без внешнего LLM API.**
 
-**Полностью локальный RAG-ассистент для работы с юридическими документами.**
+`Documents → Chunking → multilingual-e5-small → Qdrant → Relevance Gate → Local LLM → Answer`
 
-Документы, embeddings, векторная база и LLM работают внутри собственной инфраструктуры без внешних LLM API.
+**Что реализовано:**
+- локальные embeddings и inference;
+- Qdrant semantic search;
+- relevance threshold для нерелевантных запросов;
+- chunking и очистка коротких фрагментов;
+- измерение retrieval/generation latency;
+- retrieval evaluation;
+- локальный запуск через Ollama.
 
-**Архитектура**
-
-`Документы → Chunking → Embeddings → Qdrant → Retrieval → Relevance Gate → Local LLM → Ответ`
-
-**Стек:**  
-`Python` · `LangChain` · `Qdrant` · `multilingual-e5-small` · `Ollama` · `Qwen2.5` · `Streamlit` · `Docker`
-
-Что реализовано:
-
-- локальный inference через Ollama
-- семантический поиск в Qdrant
-- relevance threshold для отсечения нерелевантных запросов
-- измерение retrieval / generation latency
-- эксперименты с Top-K
-- evaluation retrieval-качества
-- приватный доступ через SSH tunnel
+**Стек:** Python · LangChain · Qdrant · multilingual-e5-small · Ollama · Qwen · Docker
 
 👉 [Репозиторий](https://github.com/rbabashaikhov/enterprise-private-gpt)
 
 ---
 
-## 🧠 AI Catalog Consultant
+### 📊 SEO Analytics Pipeline
 
-**Production-like AI-консультант по товарному каталогу с RAG, structured retrieval и LLM tools.**
+**Python-пайплайн для объединения Google Search Console и Яндекс Вебмастера в единую аналитическую модель для Power BI.**
 
-Завершённый portfolio/reference проект, реализованный на реальном каталоге телевизоров Samsung.  
-LLM не используется как источник товарных фактов: цены, характеристики, наличие и ограничения берутся из PostgreSQL и контролируемых retrieval-инструментов.
+`GSC + Yandex Webmaster → Python ETL → Validation → Normalization → Analytics layer → Power BI`
 
-**Архитектура**
+**Что реализовано:**
+- единый контракт данных для двух поисковых систем;
+- нормализация дат, устройств и метрик;
+- корректный расчёт CTR и weighted average position;
+- data-quality проверки;
+- воспроизводимый публичный demo mode без credentials;
+- граница интеграции с PostgreSQL;
+- Power BI dashboard.
 
-`Каталог → Python ingestion → PostgreSQL → RAG indexing → pgvector → Consultant Core → MCP → n8n → Telegram`
-
-**Стек:**  
-`Python` · `PostgreSQL` · `pgvector` · `OpenAI` · `MCP` · `n8n` · `Docker` · `Telegram`
-
-Что реализовано:
-
-- автоматический ingestion реального товарного каталога
-- нормализованное хранение товаров и характеристик в PostgreSQL
-- deterministic document/chunk generation
-- incremental embeddings с сохранением неизменившихся vectors
-- structured SQL retrieval для точных фактов и фильтрации
-- semantic retrieval через pgvector
-- hybrid подход к поиску и рекомендациям
-- закрытый набор LLM tools вместо произвольного SQL
-- MCP-сервис как контролируемая граница между LLM и backend
-- deterministic ranking для рекомендаций
-- evidence-aware обработка характеристик: `yes / no / not listed`
-- multi-turn dialogue с сохранением пользовательских ограничений
-- semantic guard против придуманных фильтров
-- Telegram transport с изоляцией пользовательских сессий
-- n8n как orchestration/integration layer
-- retrieval и agent evaluation
-- model bake-off
-- automated regression и acceptance suites
-- production safety: least-privilege DB roles, Docker, read-only runtime
-
-Для проекта проведены полноценные retrieval- и agent-evaluation, тестирование multi-turn сценариев и live-проверка через Telegram.
-
-**Статус:** ✅ Completed portfolio MVP / reference implementation
-
-Samsung TV используется как реальный reference dataset; архитектура и инженерные подходы применимы к другим catalog-based AI systems.
-
-👉 [AI Catalog Consultant](https://github.com/rbabashaikhov/ai-automation-lab/tree/main/projects/ai-catalog-consultant)
-
----
-
-## 🔐 n8n Workflow-as-Code Tool
-
-CLI-инструмент для управления n8n workflow через официальный REST API.
-
-Основная идея — сделать разработку и обновление автоматизаций более управляемыми и Git-friendly.
-
-Реализовано:
-
-- discovery и export workflow
-- безопасное обновление workflow
-- diff перед применением изменений
-- подтверждение перед write-операциями
-- проверка на секреты
-- reusable tooling для автоматизаций
-
-👉 [AI Automation Lab](https://github.com/rbabashaikhov/ai-automation-lab)
-
----
-
-## ⚖️ Legal NER с YandexGPT
-
-Эксперимент по извлечению именованных сущностей из юридических документов с помощью LLM.
-
-Проект посвящен structured entity extraction из русскоязычных юридических текстов.
-
-**Стек:**  
-`Python` · `YandexGPT` · `Yandex AI SDK` · `uv`
-
-👉 [Репозиторий](https://github.com/rbabashaikhov/OTUS-08-YandexGPT)
-
----
-
-## 🥗 AI Food Coach
-
-Production Telegram-бот, который анализирует еду по фотографии и дает персонализированную обратную связь.
-
-Функции:
-
-- анализ блюда по фото
-- follow-up вопросы
-- рекомендации по питанию
-- анализ рациона за день
-- подписки
-- онлайн-оплата
-- хранение данных в PostgreSQL
-- production deployment
-
-**Стек:**  
-`Python` · `aiogram` · `OpenAI Vision` · `PostgreSQL` · `Docker` · `YooKassa`
-
-🤖 [Открыть AI Food Coach](https://t.me/ai_food_coach_bot)
-
----
-
-## 🎮 Two Goblins
-
-Экспериментальная браузерная кооперативная игра для двух игроков через интернет.
-
-**Стек:**  
-`Phaser` · `Colyseus` · `Node.js` · `WebSocket` · `Docker` · `Caddy`
-
-Реализовано:
-
-- multiplayer rooms
-- real-time синхронизация
-- invite links
-- reconnect
-- мобильное управление
-- переход между уровнями
-- система очков
-- telemetry сетевой задержки
-
-🎮 [Играть](https://goblins.leadmeter.ru)
-
----
-
-## 📊 SEO Analytics Pipeline
-
-Проект по сбору, трансформации и анализу SEO-данных.
-
-Он отражает мой аналитический бэкграунд и сочетает data engineering с прикладной аналитикой.
+**Стек:** Python · pandas · SQLAlchemy · PostgreSQL · Power BI · pytest · GitHub Actions
 
 👉 [Репозиторий](https://github.com/rbabashaikhov/seo-analytics-pipeline)
 
 ---
 
-## 🧪 Другие проекты
+## ⚙️ AI Automation Lab
 
-### AI CRM Email Builder
+Репозиторий с инженерными инструментами и экспериментами вокруг AI/automation.
 
-AI-инструменты и автоматизация для работы с CRM-коммуникациями.
+В том числе — **n8n Workflow-as-Code Tool**: CLI для discovery, export, diff и безопасного обновления n8n workflow через API.
 
-👉 [Репозиторий](https://github.com/rbabashaikhov/ai-crm-email-builder)
-
-### Telegram Mini Apps и веб-приложения
-
-Разрабатываю Telegram Mini Apps и прикладные веб-сервисы для бизнеса: запись на услуги, beauty, automotive, real estate и другие направления.
-
-🌐 [Портфолио проектов](https://apps.leadmeter.ru)
+👉 [AI Automation Lab](https://github.com/rbabashaikhov/ai-automation-lab)
 
 ---
 
-# 🧩 На чем сейчас фокусируюсь
+## 🛠 Основной стек
 
-- **RAG quality & evaluation**
-- **AI agents и tool use**
-- **hybrid / structured retrieval**
-- **LLM guardrails**
-- **workflow automation**
-- **local / private LLM**
-- **production AI observability**
-- **AI-приложения для бизнеса**
+**AI / LLM:** OpenAI API · RAG · embeddings · pgvector · Qdrant · MCP · tool use · local LLM  
+**Backend / Data:** Python · SQL · PostgreSQL · REST API · ETL/ELT · pandas  
+**Automation:** n8n · API integrations · Telegram bots  
+**Analytics / BI:** Power BI · web/product analytics · data quality  
+**Infrastructure:** Docker · Linux · VPS · Git · GitHub Actions
 
 ---
 
-## 💡 Подход к разработке
+## 💡 Как я подхожу к разработке
 
-Мне интересны не просто эффектные AI-демо, а системы, которые можно **измерять, тестировать, поддерживать и разворачивать в production**.
+Мне интересны не просто AI-демо, а системы, которые можно **проверить, измерить, поддерживать и использовать в реальной работе**.
 
 Для AI-проектов я смотрю на весь цикл:
 
-`Retrieval quality → Grounding → Evaluation → Latency → Cost → Reliability → Production`
+`Data quality → Retrieval → Grounding → Evaluation → Latency → Cost → Reliability → Production`
+
+Для аналитических проектов:
+
+`Sources → Data model → Validation → Transformation → Metrics → BI → Business decision`
 
 ---
 
-## 🌐 Ссылки
+## 📱 Другие проекты
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-leadmeter.ru-0A66C2?style=for-the-badge)](https://apps.leadmeter.ru)
-[![GitHub](https://img.shields.io/badge/GitHub-rbabashaikhov-181717?style=for-the-badge&logo=github)](https://github.com/rbabashaikhov)
+Telegram Mini Apps, AI-боты, веб-приложения и аналитические сервисы:
+
+👉 [apps.leadmeter.ru](https://apps.leadmeter.ru)
 
 ---
 
-### Открыт к проектам и предложениям в направлениях
+## 📬 Связаться
 
-**AI Engineering · AI Automation · LLM / RAG · Data & Analytics**
+Если вам нужен **AI-ассистент, RAG-система, автоматизация, интеграция данных, аналитический pipeline или BI-решение** — буду рад обсудить задачу.
+
+🌐 [leadmeter.ru](https://leadmeter.ru)
