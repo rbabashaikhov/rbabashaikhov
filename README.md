@@ -54,6 +54,18 @@ LangGraph-процесс **Strategist → Copywriter ⇄ Editor** с редак�
 
 ---
 
+### 🥗 AI Food Coach — AI-продукт в Telegram
+
+**Работающий Telegram-сервис для приблизительного анализа еды по фото, разбора меню и персональных рекомендаций.**
+
+Разработал полный продуктовый контур: AI-анализ изображений, бесплатный лимит и платный PRO-доступ, интеграцию с YooKassa, обработку платежей и возвратов, административную панель, продуктовые события и воронку привлечения с атрибуцией рекламных кампаний. Предусмотрены отдельный QA-контур, ограничения параллельных запросов и безопасный production deployment.
+
+**Стек:** Python · LLM API · aiogram · PostgreSQL · FastAPI · YooKassa · Docker · SQL
+
+👉 [Код и документация](https://github.com/rbabashaikhov/ai-food-coach-telegram-bot) · [Telegram-бот](https://t.me/ai_food_coach_bot)
+
+---
+
 ## 🔥 Другие ключевые проекты
 
 ### 🧠 AI Catalog Consultant
