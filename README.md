@@ -14,6 +14,20 @@
 
 ## 🚀 Последние AI-проекты
 
+### 🎙️ Omni AI Assistant — мультимодальный голосовой ассистент
+
+**Голосовой AI-ассистент, объединяющий распознавание речи, анализ изображений и синтез ответа.**
+
+Реализовал полный цикл **голосовой вопрос → Whisper ASR → Qwen VLM (изображение + текст) → Silero TTS → голосовой ответ** с веб-интерфейсом Gradio. Провёл шесть сценариев тестирования: обычный запрос, речь с разным уровнем шума, чтение мелкой этикетки и проверка галлюцинаций. Измерил задержки каждого этапа и оформил исследование в Jupyter Notebook.
+
+**Результат исследования:** при умеренном шуме ассистент иногда сохранял смысл запроса несмотря на ошибки ASR, а в сложных случаях основной вклад в задержку давал Whisper на CPU. Использована облачная Qwen через Yandex AI Studio; ASR и TTS работают локально.
+
+**Стек:** Python · Whisper · Qwen · Yandex AI Studio · Silero TTS · PyTorch · Gradio · Jupyter
+
+👉 [Исходный код, скриншоты, Notebook и отчёт](https://github.com/rbabashaikhov/otus-omni-assistant)
+
+---
+
 ### 🧪 ECQL Query Generator — Fine-tuning Qwen3-1.7B
 
 **Дообучение языковой модели для перевода запросов на русском языке в собственный корпоративный DSL.**
@@ -48,11 +62,11 @@
 
 LangGraph-процесс **Strategist → Copywriter ⇄ Editor** с редакционными проверками и циклом доработок. Публикация требует подтверждения человеком. Отдельный worker обрабатывает PostgreSQL-очередь с расписанием, аудитом и защитой от дублей. Реализованы Threads-публикации с текстом, изображениями и каруселями, Langfuse-трассировки и веб-интерфейс Control Center.
 
-**Статус:** публикационный worker используется с Threads; production Control Center пока доступен в режиме read-only для бизнес-операций.
+**Статус:** в разработке. Публикации контролируются человеком; production Publisher остановлен до завершения разработки и отдельного разрешения на запуск.
 
 **Стек:** Python · LangGraph · OpenAI · FastAPI · React · PostgreSQL · Langfuse · Docker · Threads Graph API
 
-👉 [Репозиторий и архитектура](https://github.com/rbabashaikhov/ai-smm-department)
+**Исходный код:** закрытый репозиторий.
 
 ---
 
@@ -76,7 +90,7 @@ LangGraph-процесс **Strategist → Copywriter ⇄ Editor** с редак�
 
 **Стек:** Python · LLM API · aiogram · PostgreSQL · FastAPI · YooKassa · Docker · SQL
 
-👉 [Код и документация](https://github.com/rbabashaikhov/ai-food-coach-telegram-bot) · [Telegram-бот](https://t.me/ai_food_coach_bot)
+**Исходный код:** закрытый репозиторий. · [Telegram-бот](https://t.me/ai_food_coach_bot)
 
 ---
 
@@ -103,7 +117,7 @@ LangGraph-процесс **Strategist → Copywriter ⇄ Editor** с редак�
 
 **Стек:** Python · PostgreSQL · pgvector · OpenAI · MCP · n8n · Docker · Telegram
 
-👉 [Код и архитектура](https://github.com/rbabashaikhov/ai-automation-lab/tree/main/projects/ai-catalog-consultant)
+**Исходный код:** закрытый репозиторий.
 
 ---
 
@@ -145,7 +159,7 @@ LangGraph-процесс **Strategist → Copywriter ⇄ Editor** с редак�
 
 **Стек:** Python · pandas · SQLAlchemy · PostgreSQL · Power BI · pytest · GitHub Actions
 
-👉 [Репозиторий](https://github.com/rbabashaikhov/seo-analytics-pipeline)
+**Исходный код:** закрытый репозиторий.
 
 ---
 
@@ -155,7 +169,7 @@ LangGraph-процесс **Strategist → Copywriter ⇄ Editor** с редак�
 
 В том числе — **n8n Workflow-as-Code Tool**: CLI для discovery, export, diff и безопасного обновления n8n workflow через API.
 
-👉 [AI Automation Lab](https://github.com/rbabashaikhov/ai-automation-lab)
+**Исходный код:** закрытый репозиторий.
 
 ---
 
