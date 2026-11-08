@@ -78,7 +78,7 @@ LangGraph-процесс **Strategist → Copywriter ⇄ Editor** с редак�
 
 **Стек:** Python · Yandex Vision OCR · PyMuPDF · OpenCV · python-docx · aiogram · IMAP/SMTP · Docker
 
-👉 [Репозиторий и архитектура](https://github.com/rbabashaikhov/ocr-document-bot)
+**Исходный код:** закрытый репозиторий.
 
 ---
 
